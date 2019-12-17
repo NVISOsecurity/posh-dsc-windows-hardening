@@ -31,11 +31,11 @@ Azure Security Center Baseline for Windows Server 2016 can be found here:
 
 ## Malware Archeology Windows Logging Best Practices
 
-The AuditPolicy_WindowsServer2016.ps1 file contains the Powershell DSC code for applying the Malware Archeology Windows logging best practices.
+The AuditPolicy_WindowsServer2016.ps1 file contains the Powershell DSC code for applying the Malware Archeology Windows logging and audit settings best practices.
 
-The logging best practices can be found on the following website:
+The Windows logging and audit settings best practices can be found on the following website:
 
-[Malware Archelogy](https://www.malwarearchaeology.com/logging)
+[Malware Archeology](https://www.malwarearchaeology.com/logging)
 
 ## Usage
 
