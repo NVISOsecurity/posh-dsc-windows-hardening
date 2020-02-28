@@ -4,7 +4,7 @@ This repository contains PowerShell DSC code for the secure configuration of Win
 
 - CIS Microsoft Windows Server 2016 benchmark v1.1.0
 - Azure Secure Center Baseline for Windows Server 2016
-- Malware Archeology Windows Logging Best Practices
+- Windows Event Log and Audit Policy Best Practices
 
 ## CIS Microsoft Windows Server 2016 benchmark v1.1.0
 
@@ -29,11 +29,11 @@ Azure Security Center Baseline for Windows Server 2016 can be found here:
 
 [TechNet Azure Security Center Common Configuration](https://gallery.technet.microsoft.com/Azure-Security-Center-a789e335)
 
-## Malware Archeology Windows Logging Best Practices
+## Windows Event Log and Audit Policy Best Practices
 
-The AuditPolicy_WindowsServer2016.ps1 file contains the Powershell DSC code for applying the Malware Archeology Windows logging and audit settings best practices.
+The AuditPolicy_WindowsServer2016.ps1 file contains the Powershell DSC code for applying Windows event logging and audit settings best practices.
 
-The Windows logging and audit settings best practices can be found on the following website:
+These best practices are based on guidelines from Malware Archeology:
 
 [Malware Archeology](https://www.malwarearchaeology.com/logging)
 
