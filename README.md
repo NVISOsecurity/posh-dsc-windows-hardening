@@ -39,7 +39,7 @@ These best practices are based on guidelines from Malware Archeology:
 
 ## Usage
 
-To apply the CIS benchmark PowerShell DSC code, follow these steps:
+To apply the CIS benchmark PowerShell DSC code, follow these steps in an elevated PowerShell prompt:
 
 Install the required PowerShell DSC modules:
 
@@ -56,6 +56,12 @@ Compile the CIS benchmark PowerShell DSC code:
 ```
 
 A MOF file will be created.
+
+Increase the maximum envelope size, by running the following command
+
+```
+Set-Item -Path WSMan:\localhost\MaxEnvelopeSizeKb -Value 2048
+```
 
 Run the following command to apply the PowerShell DSC configuration:
 
