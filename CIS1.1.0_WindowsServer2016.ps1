@@ -431,8 +431,6 @@ Configuration CIS_WindowsServer2016_v110 {
          # 2.3.10.10 (L1) Ensure 'Network access: Restrict anonymous access to Named Pipes and Shares' is set to 'Enabled' 
          Network_access_Restrict_anonymous_access_to_Named_Pipes_and_Shares = 'Enabled' 
          # 2.3.10.11 (L1) Ensure 'Network access: Restrict clients allowed to make remote calls to SAM' is set to 'Administrators: Remote Access: Allow' (MS only) 
-         #FIX: Source: https://github.com/PowerShell/SecurityPolicyDsc/issues/89
-         # Not working
          #Network_access_Restrict_clients_allowed_to_make_remote_calls_to_SAM = 'Administrators: Remote Access: Allow'
          Network_access_Restrict_clients_allowed_to_make_remote_calls_to_SAM = @(
             MSFT_RestrictedRemoteSamSecurityDescriptor
@@ -765,9 +763,8 @@ Configuration CIS_WindowsServer2016_v110 {
             AuditFlag = 'Failure'      
          }
 
-     AuditPolicySubcategory 'Audit Computer Account Management (Success)' {
+         AuditPolicySubcategory 'Audit Computer Account Management (Success)' {
             Name      = 'Computer Account Management'
-            
             Ensure    = 'Present'   
             AuditFlag = 'Success'      
          }

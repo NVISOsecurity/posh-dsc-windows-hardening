@@ -12,7 +12,7 @@ Configuration AuditPolicy_WindowsServer2016
 
     Node $NodeName
     {
-        # 1: wevtutil sl Security /ms:540100100 (7 days)
+        # 1: wevtutil sl Security /ms:540100100
         WindowsEventLog Security
         {
            LogName            = 'Security'
@@ -22,7 +22,7 @@ Configuration AuditPolicy_WindowsServer2016
         }
 
         #::250MB
-        # 2: wevtutil sl Application /ms:256000100 (3.5 days)
+        # 2: wevtutil sl Application /ms:256000100
         WindowsEventLog Application
         {
            LogName            = 'Application'
@@ -32,7 +32,7 @@ Configuration AuditPolicy_WindowsServer2016
         }
 
         #::250MB
-        # 3: wevtutil sl Setup /ms:256000100 (3.5 days)
+        # 3: wevtutil sl Setup /ms:256000100
         WindowsEventLog Setup
         {
            LogName            = 'Setup'
@@ -42,7 +42,7 @@ Configuration AuditPolicy_WindowsServer2016
         }
 
         #::250MB
-        # 4: wevtutil sl System /ms:256000100 (3.5 days)
+        # 4: wevtutil sl System /ms:256000100
         WindowsEventLog System
         {
            LogName            = 'System'
@@ -75,23 +75,15 @@ Configuration AuditPolicy_WindowsServer2016
         #500MB (Estimate)
         # 7: wevtutil sl "Microsoft-Windows-Sysmon/Operational" /ms:524288000
         # WARNING! Need to have Sysmon installed
-        WindowsEventLog 'Microsoft-Windows-Sysmon/Operational'
-        {
-           LogName            = 'Microsoft-Windows-Sysmon/Operational'
-           IsEnabled          = $true
-           LogMode            = 'Circular'
-           MaximumSizeInBytes = 500MB
-        }
+        # WindowsEventLog 'Microsoft-Windows-Sysmon/Operational'
+        # {
+        #    LogName            = 'Microsoft-Windows-Sysmon/Operational'
+        #    IsEnabled          = $true
+        #    LogMode            = 'Circular'
+        #    MaximumSizeInBytes = 500MB
+        # }
 
-        #
-        #:: SET Events to log the Command Line if Patch MS15-015 KB3031432 is installed (Win7 and Win 2008, built-in for Win8 & Win2012)
-
-        # :: -----------------------------------
-        #::
-
-        #SET Events to log the Command Line if Patch MS15-015 KB3031432 is installed (Win7 and Win 2008, built-in for Win8 & Win2012)
         #reg add "hklm\software\microsoft\windows\currentversion\policies\system\audit" /v ProcessCreationIncludeCmdLine_Enabled /t #REG_DWORD /d 1
-        # WARNING! Already present in the other file! This could generate a conflict!
         Registry 'ProcessCreationIncludeCmdLine_Enabled2' {
            Ensure     = 'Present'
            Key        = 'HKEY_LOCAL_MACHINE/SOFTWARE/Microsoft/Windows/CurrentVersion/Policies/System/Audit/'
@@ -108,38 +100,6 @@ Configuration AuditPolicy_WindowsServer2016
            ValueName  = 'SCENoApplyLegacyAuditPolicy'
            ValueType  = 'DWord'
            ValueData  = '1'
-        }
-        #::#######################################################################
-
-        #:: Creates profile.ps1 in the correct location - SET Command variables for PowerShell - Enables default profile to collect #PowerShell Command Line parameters and allows .PS1 to execute
-
-        #:: --------------------------------------------------------------------------------------------------------------------------
-
-        #Allows local powershell scripts to run
-        #powershell Set-ExecutionPolicy RemoteSigned
-
-        #echo Get-Item "hklm:\software\microsoft\windows\currentversion\policies\system\audit" > #c:\windows\system32\WindowsPowerShell\v1.0\profile.ps1
-
-        #echo $LogCommandHealthEvent = $true >> c:\windows\system32\WindowsPowerShell\v1.0\profile.ps1
-
-        #echo $LogCommandLifecycleEvent = $true >> c:\windows\system32\WindowsPowerShell\v1.0\profile.ps1
-
-        #::#######################################################################
-
-        #::#######################################################################
-        #:: Additions to Michael Gough's Script using his settings from PowerShell Logging Cheatsheet https://static1.squarespace.com/#static/552092d5e4b0661088167e5c/t/578627e66b8f5b322df3ae5b/1468409832299/Windows+PowerShell+Logging+Cheat+Sheet+ver+June+2016+v2.pdf
-
-        #::#######################################################################
-
-        # Allows local powershell scripts to run
-        #reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\PowerShell" /v ExecutionPolicy /t REG_SZ /d "RemoteSigned" /f
-        # 
-        Registry 'ExecutionPolicy' {
-           Ensure     = 'Present'
-           Key        = 'HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\PowerShell'
-           ValueName  = 'ExecutionPolicy'
-           ValueType  = 'String'
-           ValueData  = 'RemoteSigned'
         }
 
         #:
@@ -183,8 +143,6 @@ Configuration AuditPolicy_WindowsServer2016
            ValueData  = '1'
         }
 
-        #mkdir C:\temp
-
         #reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\PowerShell\Transcription" /v OutputDirectory /t REG_SZ /d "C:\temp" /f
         # 
         Registry 'OutputDirectory' {
@@ -194,17 +152,6 @@ Configuration AuditPolicy_WindowsServer2016
            ValueType  = 'String'
            ValueData  = 'C:\temp'
         }
-
-        #:: CAPTURE THE SETTINGS - BEFORE they have been modified
-
-        #:: --------------------------------------------------------
-
-        # Auditpol /get /category:* > AuditPol_BEFORE_%computername%.txt
-
-        #::#######################################################################
-
-        #::#######################################################################
-
 
         #Source: https://github.com/PowerShell/AuditPolicyDsc/blob/dev/Examples/Sample_AuditPolicyGuid.ps1
         # 1, Success: enable, Failure: enable
@@ -308,14 +255,14 @@ Configuration AuditPolicy_WindowsServer2016
         # Auditpol /set /subcategory:"Distribution Group Management" /success:enable /failure:enable
         AuditPolicySubcategory 'Audit Distribution Group Management (Success)' 
         {
-            Name      = 'Audit Distribution Group Management'
+            Name      = 'Distribution Group Management'
             AuditFlag = 'Success'
             Ensure    = 'Present'
         }
 
         AuditPolicySubcategory 'Audit Distribution Group Management (Failure)' 
         {
-            Name      = 'Audit Distribution Group Management'
+            Name      = 'Distribution Group Management'
             AuditFlag = 'Failure'
             Ensure    = 'Present'
         }
@@ -451,7 +398,6 @@ Configuration AuditPolicy_WindowsServer2016
         
 
         # 16, Success:disable, Failure:disable
-        #WARNING! Might not run. Disabled because it does not find using Start-Configuration => Commented out
         # Auditpol /set /subcategory:"Directory Service Access" /success:disable /failure:disable
         AuditPolicySubcategory 'Directory Service Access (Success)' 
         {
@@ -468,7 +414,6 @@ Configuration AuditPolicy_WindowsServer2016
         }
 
         # 17, Success:enable, Failure:enable
-        #WARNING! Might not run. Disabled because it does not find using Start-Configuration => Commented out
         # Auditpol /set /subcategory:"Directory Service Changes" /success:enable /failure:enable
         AuditPolicySubcategory 'Directory Service Changes (Success)' 
         {
@@ -519,7 +464,6 @@ Configuration AuditPolicy_WindowsServer2016
 
         # 20, Success:disable, Failure:disable
         # Auditpol /set /subcategory:"IPsec Extended Mode" /success:disable /failure:disable
-
         AuditPolicySubcategory 'Audit IPsec Extended Mode (Success)'
         {
             Name      = 'IPsec Extended Mode'
@@ -737,7 +681,6 @@ Configuration AuditPolicy_WindowsServer2016
 
         # 34, Success:disable, Failure:disable
         # Auditpol /set /subcategory:"Filtering Platform Packet Drop" /success:disable /failure:disable
-
         AuditPolicySubcategory 'Audit Filtering Platform Packet Drop (Success)'
         {
             Name      = 'Filtering Platform Packet Drop'
@@ -808,8 +751,6 @@ Configuration AuditPolicy_WindowsServer2016
             AuditFlag = 'Success'
             Ensure    = 'Present'
         }
-
-
 
         # 39, Success:enable, Failure:enable
         # Auditpol /set /subcategory:"Removable Storage" /success:enable /failure:enable
