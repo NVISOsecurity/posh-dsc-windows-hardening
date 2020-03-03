@@ -1,6 +1,6 @@
-# posh-dsc-win2016-secureconfig
+# posh-dsc-windowsserver-hardening
 
-This repository contains PowerShell DSC code for the secure configuration of Windows Server 2016 according to the following hardening guidelines:
+This repository contains PowerShell DSC code for the secure configuration of Windows Server according to the following hardening guidelines:
 
 - CIS Microsoft Windows Server 2016 benchmark v1.1.0
 - Azure Secure Center Baseline for Windows Server 2016
