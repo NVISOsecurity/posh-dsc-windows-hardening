@@ -6,6 +6,8 @@ This repository contains PowerShell DSC code for the secure configuration of Win
 - Azure Secure Center Baseline for Windows Server 2016
 - Windows Event Log and Audit Policy Best Practices
 
+Read more about it on our [NVISO Blog](https://blog.nviso.eu/2020/03/03/windows-server-hardening-with-powershell-dsc/) 
+
 ## CIS Microsoft Windows Server 2016 benchmark v1.1.0
 
 The CIS1.1.0_WindowsServer2016.ps1 file contains the Powershell DSC configuration applying the CIS Microsoft Windows Server 2016 benchmark with the recommended controls.
