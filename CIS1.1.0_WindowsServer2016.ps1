@@ -492,7 +492,7 @@ Configuration CIS_WindowsServer2016_v110 {
        }
 
        #  9.1.1 (L1) Ensure 'Windows Firewall: Domain: Firewall state' is set to 'On (recommended)'
-       Registry 'EnableFirewall' {
+       Registry 'EnableFirewallDomain' {
            Ensure      = 'Present'
            Key         = 'HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\WindowsFirewall\DomainProfile\EnableFirewall'
            ValueName   = 'EnableFirewall'
@@ -501,7 +501,7 @@ Configuration CIS_WindowsServer2016_v110 {
        }
 
        #  9.1.2 (L1) Ensure 'Windows Firewall: Domain: Inbound connections' is set to 'Block (default)'
-       Registry 'DefaultInboundAction' {
+       Registry 'DefaultInboundActionDomain' {
            Ensure      = 'Present'
            Key         = 'HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\WindowsFirewall\DomainProfile\DefaultInboundAction'
            ValueName   = 'DefaultInboundAction'
@@ -510,16 +510,16 @@ Configuration CIS_WindowsServer2016_v110 {
        }
 
        #  9.1.3 (L1) Ensure 'Windows Firewall: Domain: Outbound connections' is set to 'Allow (default)'
-       Registry 'DefaultOutboundAction' {
+       Registry 'DefaultOutboundActionDomain' {
            Ensure      = 'Present'
            Key         = 'HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\WindowsFirewall\DomainProfile\DefaultOutboundAction'
            ValueName   = 'DefaultOutboundAction'
            ValueType   = 'DWord'
-           ValueData   = '1'
+           ValueData   = '0'
        }
 
        # 9.1.4 (L1) Ensure 'Windows Firewall: Domain: Settings: Display a notification' is set to 'No'
-       Registry 'DisableNotifications' {
+       Registry 'DisableNotificationsDomain' {
            Ensure      = 'Present'
            Key         = 'HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\WindowsFirewall\DomainProfile\DisableNotifications'
            ValueName   = 'DisableNotifications'
@@ -528,7 +528,7 @@ Configuration CIS_WindowsServer2016_v110 {
        }
 
        # 9.1.5 (L1) Ensure 'Windows Firewall: Domain: Logging: Name' is set to '%SYSTEMROOT%\System32\logfiles\firewall\domainfw.log'
-       Registry 'LogFilePath' {
+       Registry 'LogFilePathDomain' {
            Ensure      = 'Present'
            Key         = 'HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\WindowsFirewall\DomainProfile\Logging\LogFilePath'
            ValueName   = 'DisableNotifications'
@@ -537,7 +537,7 @@ Configuration CIS_WindowsServer2016_v110 {
        }
 
        # 9.1.6 (L1) Ensure 'Windows Firewall: Domain: Logging: Size limit (KB)' is set to '16,384 KB or greater'
-       Registry 'LogFileSize' {
+       Registry 'LogFileSizeDomain' {
            Ensure      = 'Present'
            Key         = 'HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\WindowsFirewall\DomainProfile\Logging\LogFileSize'
            ValueName   = 'LogFileSize'
@@ -546,7 +546,7 @@ Configuration CIS_WindowsServer2016_v110 {
        }
 
        #  9.1.7 (L1) Ensure 'Windows Firewall: Domain: Logging: Log dropped packets' is set to 'Yes'
-       Registry 'LogDroppedPackets' {
+       Registry 'LogDroppedPacketsDomain' {
           Ensure       = 'Present'
           Key          = 'HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\WindowsFirewall\DomainProfile\Logging\LogDroppedPackets'
           ValueName    = 'LogDroppedPackets'
@@ -555,7 +555,7 @@ Configuration CIS_WindowsServer2016_v110 {
        }
 
        #  9.1.8 (L1) Ensure 'Windows Firewall: Domain: Logging: Log successful connections' is set to 'Yes'
-       Registry 'LogSuccessfulConnections' {
+       Registry 'LogSuccessfulConnectionsDomain' {
           Ensure       = 'Present'
           Key          = 'HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\WindowsFirewall\DomainProfile\Logging\LogSuccessfulConnections'
           ValueName    = 'LogSuccessfulConnections'
@@ -564,7 +564,7 @@ Configuration CIS_WindowsServer2016_v110 {
        }
 
        #  9.2.1 (L1) Ensure 'Windows Firewall: Private: Firewall state' is set to 'On (recommended)'
-       Registry 'EnableFirewall2' {
+       Registry 'EnableFirewallPrivate' {
           Ensure       = 'Present'
           Key          = 'HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\WindowsFirewall\PrivateProfile'
           ValueName    = 'EnableFirewall'
@@ -573,7 +573,7 @@ Configuration CIS_WindowsServer2016_v110 {
        }
 
        #  9.2.2 (L1) Ensure 'Windows Firewall: Private: Inbound connections' is set to 'Block (default)'
-       Registry 'DefaultInboundAction2' {
+       Registry 'DefaultInboundActionPrivate' {
           Ensure       = 'Present'
           Key          = 'HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\WindowsFirewall\PrivateProfile'
           ValueName    = 'DefaultInboundAction'
@@ -582,7 +582,7 @@ Configuration CIS_WindowsServer2016_v110 {
        }
 
        #  9.2.3 (L1) Ensure 'Windows Firewall: Private: Outbound connections' is set to 'Allow (default)'
-       Registry 'DefaultOutboundAction2' {
+       Registry 'DefaultOutboundActionPrivate' {
           Ensure       = 'Present'
           Key          = 'HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\WindowsFirewall\PrivateProfile'
           ValueName    = 'DefaultOutboundAction'
@@ -591,7 +591,7 @@ Configuration CIS_WindowsServer2016_v110 {
        }
 
        #  9.2.4 (L1) Ensure 'Windows Firewall: Private: Settings: Display a notification' is set to 'No'
-       Registry 'DisableNotifications2' {
+       Registry 'DisableNotificationsPrivate' {
           Ensure       = 'Present'
           Key          = 'HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\WindowsFirewall\PrivateProfile'
           ValueName    = 'DisableNotifications'
@@ -600,7 +600,7 @@ Configuration CIS_WindowsServer2016_v110 {
        }
 
        #  9.2.5 (L1) Ensure 'Windows Firewall: Private: Logging: Name' is set to '%SYSTEMROOT%\System32\logfiles\firewall\privatefw.log'
-       Registry 'LogFilePath2' {
+       Registry 'LogFilePathPrivate' {
           Ensure       = 'Present'
           Key          = 'HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\WindowsFirewall\PrivateProfile\Logging'
           ValueName    = 'LogFilePath'
@@ -609,7 +609,7 @@ Configuration CIS_WindowsServer2016_v110 {
        }
 
        #  9.2.6 (L1) Ensure 'Windows Firewall: Private: Logging: Size limit (KB)' is set to '16,384 KB or greater'
-       Registry 'LogFileSize2' {
+       Registry 'LogFileSizePrivate' {
           Ensure       = 'Present'
           Key          = 'HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\WindowsFirewall\PrivateProfile\Logging'
           ValueName    = 'LogFileSize'
@@ -618,7 +618,7 @@ Configuration CIS_WindowsServer2016_v110 {
        }
 
        #  9.2.7 (L1) Ensure 'Windows Firewall: Private: Logging: Log dropped packets' is set to 'Yes'
-       Registry 'LogDroppedPackets2' {
+       Registry 'LogDroppedPacketsPrivate' {
           Ensure       = 'Present'
           Key          = 'HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\WindowsFirewall\PrivateProfile\Logging'
           ValueName    = 'LogDroppedPackets'
@@ -627,7 +627,7 @@ Configuration CIS_WindowsServer2016_v110 {
        }
 
        #  9.2.8 (L1) Ensure 'Windows Firewall: Private: Logging: Log successful connections' is set to 'Yes'
-       Registry 'LogSuccessfulConnections2' {
+       Registry 'LogSuccessfulConnectionsPrivate' {
           Ensure       = 'Present'
           Key          = 'HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\WindowsFirewall\PrivateProfile\Logging'
           ValueName    = 'LogSuccessfulConnections'
@@ -636,7 +636,7 @@ Configuration CIS_WindowsServer2016_v110 {
        }
 
        #  9.3.1 (L1) Ensure 'Windows Firewall: Public: Firewall state' is set to 'On (recommended)'
-       Registry 'EnableFirewall3' {
+       Registry 'EnableFirewallPublic' {
           Ensure       = 'Present'
           Key          = 'HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\WindowsFirewall\PublicProfile'
           ValueName    = 'EnableFirewall'
@@ -645,7 +645,7 @@ Configuration CIS_WindowsServer2016_v110 {
        }
 
        #  9.3.2 (L1) Ensure 'Windows Firewall: Public: Inbound connections' is set to 'Block (default)'
-       Registry 'DefaultInboundAction3' {
+       Registry 'DefaultInboundActionPublic' {
           Ensure       = 'Present'
           Key          = 'HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\WindowsFirewall\PublicProfile'
           ValueName    = 'DefaultInboundAction'
@@ -654,7 +654,7 @@ Configuration CIS_WindowsServer2016_v110 {
        }
 
        #  9.3.3 (L1) Ensure 'Windows Firewall: Public: Outbound connections' is set to 'Allow (default)'
-       Registry 'DefaultOutboundAction3' {
+       Registry 'DefaultOutboundActionPublic' {
           Ensure       = 'Present'
           Key          = 'HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\WindowsFirewall\PublicProfile'
           ValueName    = 'DefaultOutboundAction'
@@ -663,7 +663,7 @@ Configuration CIS_WindowsServer2016_v110 {
        }
 
        #  9.3.4 (L1) Ensure 'Windows Firewall: Public: Settings: Display a notification' is set to 'No'
-       Registry 'DisableNotifications3' {
+       Registry 'DisableNotificationsPublic' {
           Ensure       = 'Present'
           Key          = 'HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\WindowsFirewall\PublicProfile'
           ValueName    = 'DisableNotifications'
@@ -690,7 +690,7 @@ Configuration CIS_WindowsServer2016_v110 {
        }
 
        #  9.3.7 (L1) Ensure 'Windows Firewall: Public: Logging: Name' is set to '%SYSTEMROOT%\System32\logfiles\firewall\publicfw.log'
-       Registry 'LogFilePath3' {
+       Registry 'LogFilePathPublic' {
           Ensure       = 'Present'
           Key          = 'HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\WindowsFirewall\PublicProfile\Logging'
           ValueName    = 'LogFilePath'
@@ -699,7 +699,7 @@ Configuration CIS_WindowsServer2016_v110 {
        }
 
        #  9.3.8 (L1) Ensure 'Windows Firewall: Public: Logging: Size limit (KB)' is set to '16,384 KB or greater'
-       Registry 'LogFileSize3' {
+       Registry 'LogFileSizePublic' {
           Ensure       = 'Present'
           Key          = 'HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\WindowsFirewall\PublicProfile\Logging'
           ValueName    = 'LogFileSize'
@@ -708,7 +708,7 @@ Configuration CIS_WindowsServer2016_v110 {
        }
 
        #  9.3.9 (L1) Ensure 'Windows Firewall: Public: Logging: Log dropped packets' is set to 'Yes'
-       Registry 'LogDroppedPackets3' {
+       Registry 'LogDroppedPacketsPublic' {
           Ensure       = 'Present'
           Key          = 'HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\WindowsFirewall\PublicProfile\Logging'
           ValueName    = 'LogDroppedPackets'
@@ -717,7 +717,7 @@ Configuration CIS_WindowsServer2016_v110 {
        }
 
        #  9.3.10 (L1) Ensure 'Windows Firewall: Public: Logging: Log successful connections' is set to 'Yes'
-       Registry 'LogSuccessfulConnections3' {
+       Registry 'LogSuccessfulConnectionsPublic' {
           Ensure       = 'Present'
           Key          = 'HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\WindowsFirewall\PublicProfile\Logging'
           ValueName    = 'LogSuccessfulConnections'
@@ -2015,7 +2015,7 @@ Configuration CIS_WindowsServer2016_v110 {
        }
 
        #  18.8.49.1.1 (L2) Ensure 'Enable Windows NTP Client' is set to 'Enabled'
-       Registry 'Enabled' {
+       Registry 'EnableNTPClient' {
           Ensure     = 'Present'
           Key        = 'HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\W32Time\TimeProviders\NtpClient'
           ValueName  = 'Enabled'
@@ -2024,7 +2024,7 @@ Configuration CIS_WindowsServer2016_v110 {
        }
 
        #  18.8.49.1.2 (L2) Ensure 'Enable Windows NTP Server' is set to 'Disabled' (MS only)
-       Registry 'Enabled2' {
+       Registry 'EnableNTPServer' {
           Ensure     = 'Present'
           Key        = 'HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\W32Time\TimeProviders\NtpServer'
           ValueName  = 'Enabled'
@@ -2177,7 +2177,7 @@ Configuration CIS_WindowsServer2016_v110 {
        }
 
        #  18.9.26.1.1 (L1) Ensure 'Application: Control Event Log behavior when the log file reaches its maximum size' is set to 'Disabled'
-       Registry 'Retention' {
+       Registry 'RetentionApplicationLog' {
           Ensure     = 'Present'
           Key        = 'HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\EventLog\Application'
           ValueName  = 'Retention'
@@ -2186,7 +2186,7 @@ Configuration CIS_WindowsServer2016_v110 {
        }
 
        #  18.9.26.1.2 (L1) Ensure 'Application: Specify the maximum log file size (KB)' is set to 'Enabled: 32,768 or greater'
-       Registry 'MaxSize' {
+       Registry 'MaxSizeApplicationLog' {
           Ensure     = 'Present'
           Key        = 'HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\EventLog\Application'
           ValueName  = 'MaxSize'
@@ -2195,7 +2195,7 @@ Configuration CIS_WindowsServer2016_v110 {
        }
 
        #  18.9.26.2.1 (L1) Ensure 'Security: Control Event Log behavior when the log file reaches its maximum size' is set to 'Disabled'
-       Registry 'Retention2' {
+       Registry 'RetentionSecurityLog' {
           Ensure     = 'Present'
           Key        = 'HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\EventLog\Security'
           ValueName  = 'Retention'
@@ -2204,7 +2204,7 @@ Configuration CIS_WindowsServer2016_v110 {
        }
 
        #  18.9.26.2.2 (L1) Ensure 'Security: Specify the maximum log file size (KB)' is set to 'Enabled: 196,608 or greater'
-       Registry 'MaxSize2' {
+       Registry 'MaxSizeSecurityLog' {
           Ensure     = 'Present'
           Key        = 'HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\EventLog\Security'
           ValueName  = 'MaxSize'
@@ -2213,7 +2213,7 @@ Configuration CIS_WindowsServer2016_v110 {
        }
 
        #  18.9.26.3.1 (L1) Ensure 'Setup: Control Event Log behavior when the log file reaches its maximum size' is set to 'Disabled'
-       Registry 'Retention3' {
+       Registry 'RetentionSetupLog' {
           Ensure     = 'Present'
           Key        = 'HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\EventLog\Setup'
           ValueName  = 'Retention'
@@ -2222,7 +2222,7 @@ Configuration CIS_WindowsServer2016_v110 {
        }
 
        #  18.9.26.3.2 (L1) Ensure 'Setup: Specify the maximum log file size (KB)' is set to 'Enabled: 32,768 or greater'
-       Registry 'MaxSize3' {
+       Registry 'MaxSizeSetupLog' {
           Ensure     = 'Present'
           Key        = 'HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\EventLog\Setup'
           ValueName  = 'MaxSize'
@@ -2231,7 +2231,7 @@ Configuration CIS_WindowsServer2016_v110 {
        }
 
        #  18.9.26.4.1 (L1) Ensure 'System: Control Event Log behavior when the log file reaches its maximum size' is set to 'Disabled'
-       Registry 'Retention4' {
+       Registry 'RetentionSystemLog' {
           Ensure     = 'Present'
           Key        = 'HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\EventLog\System'
           ValueName  = 'Retention'
@@ -2240,7 +2240,7 @@ Configuration CIS_WindowsServer2016_v110 {
        }
 
        #  18.9.26.4.2 (L1) Ensure 'System: Specify the maximum log file size (KB)' is set to 'Enabled: 32,768 or greater'
-       Registry 'MaxSize4' {
+       Registry 'MaxSizeSystemLog' {
           Ensure     = 'Present'
           Key        = 'HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\EventLog\System'
           ValueName  = 'MaxSize'

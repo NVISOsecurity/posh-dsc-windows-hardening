@@ -4,3 +4,4 @@ win2016_secureconfig/*
 posh-dsc-win2016-secureconfig/*
 AzSC_CCEv4_WindowsServer2016/*
 test.ps1
+NVISO_w2k16.ps1
