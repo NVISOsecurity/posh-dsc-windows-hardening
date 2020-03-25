@@ -953,26 +953,26 @@ Configuration CIS_WindowsServer2019_v110 {
         
         # 17.6.1 (L1) Ensure 'Audit Detailed File Share' is set to include 'Failure'
         AuditPolicySubcategory 'Audit Detailed File Share (Success)' {
-            Name      = 'Audit Detailed File Share'
+            Name      = 'Detailed File Share'
             Ensure    = 'Absent'
             AuditFlag = 'Success'
          }
 
         AuditPolicySubcategory 'Audit Detailed File Share (Failure)' {
-            Name      = 'Audit Detailed File Share'
+            Name      = 'Detailed File Share'
             Ensure    = 'Present'
             AuditFlag = 'Failure'
          }       
 
         # 17.6.2 (L1) Ensure 'Audit  File Share' is set to include 'Failure'
         AuditPolicySubcategory 'Audit File Share (Success)' {
-            Name      = 'Audit File Share'
+            Name      = 'File Share'
             Ensure    = 'Present'
             AuditFlag = 'Success'
          }
 
         AuditPolicySubcategory 'Audit File Share (Failure)' {
-            Name      = 'Audit File Share'
+            Name      = 'File Share'
             Ensure    = 'Present'
             AuditFlag = 'Failure'
          }   
@@ -1005,13 +1005,13 @@ Configuration CIS_WindowsServer2019_v110 {
         
         # 17.7.1 (L1) Ensure 'Audit Audit Policy Change' is set to 'Success and Failure'
         AuditPolicySubcategory 'Audit Policy Change (Success)' {
-            Name      = 'Audit Policy Change'
+            Name      = 'Policy Change'
             Ensure    = 'Present'
             AuditFlag = 'Success'
         }
 
         AuditPolicySubcategory 'Audit Policy Change (Failure)' {
-            Name      = 'Audit Policy Change'
+            Name      = 'Policy Change'
             Ensure    = 'Present'
             AuditFlag = 'Failure'
         }
@@ -1044,26 +1044,26 @@ Configuration CIS_WindowsServer2019_v110 {
 
         # 17.7.4 (L1) Ensure 'Audit MPSSVC Rule-Level Policy Change' is set to 'Success and Failure'
         AuditPolicySubcategory 'Audit MPSSVC Rule-Level Policy Change (Success)' {
-            Name      = 'Audit MPSSVC Rule-Level Policy Change'
+            Name      = 'MPSSVC Rule-Level Policy Change'
             Ensure    = 'Present'
             AuditFlag = 'Success'
         }
 
         AuditPolicySubcategory 'Audit MPSSVC Rule-Level Policy Change (Failure)' {
-            Name      = 'Audit MPSSVC Rule-Level Policy Change'
+            Name      = 'MPSSVC Rule-Level Policy Change'
             Ensure    = 'Present'
             AuditFlag = 'Failure'
         }
 
         # 17.7.5 (L1) Ensure 'Audit Other Policy Change Events' is set to include 'Failure'
         AuditPolicySubcategory 'Audit Other Policy Change Events (Success)' {
-            Name      = 'Audit Other Policy Change Events'
+            Name      = 'Other Policy Change Events'
             Ensure    = 'Absent'
             AuditFlag = 'Success'
         }
 
         AuditPolicySubcategory 'Audit Other Policy Change Events (Failure)' {
-            Name      = 'Audit Other Policy Change Events'
+            Name      = 'Other Policy Change Events'
             Ensure    = 'Absent'
             AuditFlag = 'Failure'
         }
@@ -3144,4 +3144,4 @@ Configuration CIS_WindowsServer2019_v110 {
    }
 }
 
-CIS_WindowsServer2016_v110
+CIS_WindowsServer2019_v110
