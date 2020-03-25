@@ -2,13 +2,29 @@
 
 This repository contains PowerShell DSC code for the secure configuration of Windows Server according to the following hardening guidelines:
 
+- CIS Microsoft Windows Server 2019 benchmark v1.1.0
 - CIS Microsoft Windows Server 2016 benchmark v1.1.0
 - Azure Secure Center Baseline for Windows Server 2016
 - Windows Event Log and Audit Policy Best Practices
 
 Read more about it on our [NVISO Blog](https://blog.nviso.eu/2020/03/03/windows-server-hardening-with-powershell-dsc/) 
 
-## CIS Microsoft Windows Server 2016 benchmark v1.1.0
+## CIS Microsoft Windows Server 2019 Release 1809 benchmark v1.1.0
+
+The CIS1.1.0_WindowsServer2019.ps1 file contains the Powershell DSC configuration applying the CIS Microsoft Windows Server 2019 benchmark with the recommended controls.
+
+The CIS benchmark is available on the following website:
+
+[CIS Benchmarks - Center for Internet Security](https://www.cisecurity.org/cis-benchmarks/)
+
+Please note the following exceptions:
+* For some recommended controls in chapter 2.2 (Local Policies: User Rights Assignment), it is not possible to configure some controls due to duplicates.
+
+* For the recommended control  18.9.97.2.2 (L2) Ensure 'Allow remote server management through WinRM' is set to 'Disabled', modify to 1 for testing.
+
+* For the recommended control 19.7.41.1 (L1) Ensure 'Always install with elevated privileges' is set to 'Disabled', it is commented out because this is a duplicate of the recommendation control 18.9.85.2 (L1) Ensure 'Always install with elevated privileges' is set to 'Disabled'.
+
+## CIS Microsoft Windows Server 2016 Release 1607 benchmark v1.1.0
 
 The CIS1.1.0_WindowsServer2016.ps1 file contains the Powershell DSC configuration applying the CIS Microsoft Windows Server 2016 benchmark with the recommended controls.
 

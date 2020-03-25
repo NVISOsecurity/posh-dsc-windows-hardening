@@ -1,4 +1,5 @@
 CIS_WindowsServer2016_v110/*
+CIS_WindowsServer2019_v110/*
 AuditPolicy_WindowsServer2016/*
 win2016_secureconfig/*
 posh-dsc-win2016-secureconfig/*
