@@ -81,6 +81,12 @@ Increase the maximum envelope size, by running the following command
 Set-Item -Path WSMan:\localhost\MaxEnvelopeSizeKb -Value 2048
 ```
 
+Enable Windows Remote management:
+
+```
+winrm quickconfig
+```
+
 Run the following command to apply the PowerShell DSC configuration:
 
 ```

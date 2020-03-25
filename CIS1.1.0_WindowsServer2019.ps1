@@ -2725,7 +2725,7 @@ Configuration CIS_WindowsServer2019_v110 {
        }
 
        #  18.9.77.14 (L1) Ensure 'Configure detection for potentially unwanted applications' is set to 'Enabled: Block'
-       Registry 'DisableAntiSpyware' {
+       Registry 'PUAProtection' {
          Ensure     = 'Present'
          Key        = 'HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\WindowsDefender'
          ValueName  = 'PUAProtection'
