@@ -103,3 +103,7 @@ The code in this repository has been tested on the following operating systems:
 ## Disclaimer
 
 This code is provided as is. Please test thoroughly before applying it to production systems.
+
+## License
+
+[GPL-3.0](LICENSE)
