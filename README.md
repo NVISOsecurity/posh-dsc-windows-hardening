@@ -2,8 +2,8 @@
 
 This repository contains PowerShell DSC code for the secure configuration of Windows Server according to the following hardening guidelines:
 
-- CIS Microsoft Windows Server 2019 benchmark v1.1.0
-- CIS Microsoft Windows Server 2016 benchmark v1.1.0
+- CIS Microsoft Windows Server 2019 Release 1809 benchmark v1.1.0
+- CIS Microsoft Windows Server 2016 Release 1607 benchmark v1.1.0
 - Azure Secure Center Baseline for Windows Server 2016
 - Windows Event Log and Audit Policy Best Practices
 
@@ -98,6 +98,7 @@ Start-DscConfiguration -Path .\CIS_WindowsServer2016_v110  -Force -Verbose -Wait
 The code in this repository has been tested on the following operating systems:
 
 * Windows Server 2016
+* Windows Server 2019
 
 ## Disclaimer
 
