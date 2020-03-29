@@ -20,6 +20,8 @@ The CIS benchmark is available on the following website:
 
 Please note the following exceptions:
 
+* For the recommended control  5.39 (L2) Ensure 'Windows Remote Management (WS-Management) (WinRM)' is set to 'Disabled', modify to 2 for testing.
+
 * For the recommended control  18.9.97.2.2 (L2) Ensure 'Allow remote server management through WinRM' is set to 'Disabled', modify to 1 for testing.
 
 ## CIS Microsoft Windows Server 2019 Release 1809 benchmark v1.1.0
