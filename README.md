@@ -12,7 +12,7 @@ Read more about it on our [NVISO Blog](https://blog.nviso.eu/2020/03/03/windows-
 
 ## CIS Microsoft Windows 10 Enterprise Release 1909 Benchmark v1.8.1
 
-The CIS_Windows10_v181.ps1 file contains the Powershell DSC configuration applying the CIS Microsoft Windows Server 10 benchmark with the recommended controls.
+The CIS_Windows10_v181.ps1 file contains the Powershell DSC configuration applying the CIS Microsoft Windows 10 benchmark with the recommended controls.
 
 The CIS benchmark is available on the following website:
 
