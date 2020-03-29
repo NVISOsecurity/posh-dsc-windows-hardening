@@ -2,6 +2,7 @@
 
 This repository contains PowerShell DSC code for the secure configuration of Windows Server according to the following hardening guidelines:
 
+- CIS Microsoft Windows 10 Enterprise Release 1909 Benchmark v1.8.1
 - CIS Microsoft Windows Server 2019 Release 1809 benchmark v1.1.0
 - CIS Microsoft Windows Server 2016 Release 1607 benchmark v1.1.0
 - Azure Secure Center Baseline for Windows Server 2016
@@ -9,9 +10,21 @@ This repository contains PowerShell DSC code for the secure configuration of Win
 
 Read more about it on our [NVISO Blog](https://blog.nviso.eu/2020/03/03/windows-server-hardening-with-powershell-dsc/) 
 
+## CIS Microsoft Windows 10 Enterprise Release 1909 Benchmark v1.8.1
+
+The CIS_Windows10_v181.ps1 file contains the Powershell DSC configuration applying the CIS Microsoft Windows Server 10 benchmark with the recommended controls.
+
+The CIS benchmark is available on the following website:
+
+[CIS Benchmarks - Center for Internet Security](https://www.cisecurity.org/cis-benchmarks/)
+
+Please note the following exceptions:
+
+* For the recommended control  18.9.97.2.2 (L2) Ensure 'Allow remote server management through WinRM' is set to 'Disabled', modify to 1 for testing.
+
 ## CIS Microsoft Windows Server 2019 Release 1809 benchmark v1.1.0
 
-The CIS1.1.0_WindowsServer2019.ps1 file contains the Powershell DSC configuration applying the CIS Microsoft Windows Server 2019 benchmark with the recommended controls.
+The CIS_WindowsServer2019_v110.ps1 file contains the Powershell DSC configuration applying the CIS Microsoft Windows Server 2019 benchmark with the recommended controls.
 
 The CIS benchmark is available on the following website:
 
@@ -26,7 +39,7 @@ Please note the following exceptions:
 
 ## CIS Microsoft Windows Server 2016 Release 1607 benchmark v1.1.0
 
-The CIS1.1.0_WindowsServer2016.ps1 file contains the Powershell DSC configuration applying the CIS Microsoft Windows Server 2016 benchmark with the recommended controls.
+The CIS_WindowsServer2016_v110.ps1 file contains the Powershell DSC configuration applying the CIS Microsoft Windows Server 2016 benchmark with the recommended controls.
 
 The CIS benchmark is available on the following website:
 

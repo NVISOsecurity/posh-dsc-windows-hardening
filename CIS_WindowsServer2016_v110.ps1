@@ -164,7 +164,7 @@ Configuration CIS_WindowsServer2016_v110 {
       #  2.2.21 (L1) Ensure 'Deny access to this computer from the network' is set to 'Guests, Local account and member of Administrators group' (MS only)
        UserRightsAssignment Denyaccesstothiscomputerfromthenetwork {
           Policy       = 'Deny_access_to_this_computer_from_the_network'
-          Identity     = 'Guests, Local account and member of Administrators group'
+          Identity     = 'Guests, Local account, Administrators'
        }
 
       #  2.2.22 (L1) Ensure 'Deny log on as a batch job' to include 'Guests'
@@ -340,15 +340,15 @@ Configuration CIS_WindowsServer2016_v110 {
          # 2.3.1.1 (L1) Ensure 'Accounts: Administrator account status' is set to 'Disabled' (MS only)
          Accounts_Administrator_account_status  = 'Disabled'
          # 2.3.1.2 (L1) Ensure 'Accounts: Block Microsoft accounts' is set to 'Users can't add or log on with Microsoft accounts'
-         Accounts_Block_Microsoft_accounts = 'This policy is disabled'
+         Accounts_Block_Microsoft_accounts = 'Users cant add or log on with Microsoft accounts'
          # 2.3.1.3 (L1) Ensure 'Accounts: Guest account status' is set to 'Disabled' (MS only)
          Accounts_Guest_account_status = 'Disabled'
          # 2.3.1.4 (L1) Ensure 'Accounts: Limit local account use of blank passwords to console logon only' is set to 'Enabled'
          Accounts_Limit_local_account_use_of_blank_passwords_to_console_logon_only = 'Enabled'
          # 2.3.1.5 (L1) Configure 'Accounts: Rename administrator account'
-         Accounts_Rename_administrator_account = 'User_adm' # WARNING! Any value different from Administrator
+         Accounts_Rename_administrator_account = 'User_Adm' # WARNING! Any value different from Administrator
          # 2.3.1.6 (L1) Configure 'Accounts: Rename guest account'
-         Accounts_Rename_guest_account = 'User' # WARNING! Any value different from Guest
+         Accounts_Rename_guest_account = 'User_Guest' # WARNING! Any value different from Guest
          # 2.3.2.1 (L1) Ensure 'Audit: Force audit policy subcategory settings (Windows Vista or later) to override audit policy category settings' is set to 'Enabled'
          Audit_Force_audit_policy_subcategory_settings_Windows_Vista_or_later_to_override_audit_policy_category_settings = 'Enabled'
          # 2.3.2.2 (L1) Ensure 'Audit: Shut down system immediately if unable to log security audits' is set to 'Disabled'
@@ -409,7 +409,7 @@ Configuration CIS_WindowsServer2016_v110 {
          # 2.3.9.4 (L1) Ensure 'Microsoft network server: Disconnect clients when logon hours expire' is set to 'Enabled'
          Microsoft_network_server_Disconnect_clients_when_logon_hours_expire = 'Enabled' 
          # 2.3.9.5 (L1) Ensure 'Microsoft network server: Server SPN target name validation level' is set to 'Accept if provided by client' or higher (MS only) 
-         #Microsoft_network_server_Server_SPN_target_name_validation_level = 'Accept_if_provided_by_the_client'
+         #Microsoft_network_server_Server_SPN_target_name_validation_level = 'Accept if provided by client'
          Microsoft_network_server_Server_SPN_target_name_validation_level = 'Required from client'
          # 2.3.10.1 (L1) Ensure 'Network access: Allow anonymous SID/Name translation' is set to 'Disabled'
          Network_access_Allow_anonymous_SID_Name_translation = 'Disabled' 
@@ -425,9 +425,9 @@ Configuration CIS_WindowsServer2016_v110 {
          Network_access_Named_Pipes_that_can_be_accessed_anonymously = ''
          # 2.3.10.7 (L1) Configure 'Network access: Named Pipes that can be accessed anonymously' (MS only) 
          # 2.3.10.8 (L1) Configure 'Network access: Remotely accessible registry paths' 
-         Network_access_Remotely_accessible_registry_paths = ''
+         Network_access_Remotely_accessible_registry_paths = 'System\CurrentControlSet\Control\ProductOptions, System\CurrentControlSet\Control\Server Applications, SOFTWARE\Microsoft\Windows NT\CurrentVersion'
          # 2.3.10.9 (L1) Configure 'Network access: Remotely accessible registry paths and sub-paths' 
-         Network_access_Remotely_accessible_registry_paths_and_subpaths = ''
+         Network_access_Remotely_accessible_registry_paths_and_subpaths = 'System\CurrentControlSet\Control\Print\Printers, System\CurrentControlSet\Services\Eventlog, Software\Microsoft\OLAP Server, Software\Microsoft\Windows NT\CurrentVersion\Print, Software\Microsoft\Windows NT\CurrentVersion\Windows, System\CurrentControlSet\Control\ContentIndex, System\CurrentControlSet\Control\Terminal Server, System\CurrentControlSet\Control\Terminal Server\UserConfig, System\CurrentControlSet\Control\Terminal Server\DefaultUserConfiguration, Software\Microsoft\Windows NT\CurrentVersion\Perflib, System\CurrentControlSet\Services\SysmonLog'
          # 2.3.10.10 (L1) Ensure 'Network access: Restrict anonymous access to Named Pipes and Shares' is set to 'Enabled' 
          Network_access_Restrict_anonymous_access_to_Named_Pipes_and_Shares = 'Enabled' 
          # 2.3.10.11 (L1) Ensure 'Network access: Restrict clients allowed to make remote calls to SAM' is set to 'Administrators: Remote Access: Allow' (MS only) 
@@ -1921,7 +1921,7 @@ Configuration CIS_WindowsServer2016_v110 {
           Key        = 'HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Power\PowerSettings\f15576e8-98b7-4186-b944-eafa664402d9'
           ValueName  = 'DCSettingIndex'
           ValueType  = 'DWord'
-          ValueData  = '1'
+          ValueData  = '0'
        }
 
        #  18.8.33.6.2 (L2) Ensure 'Allow network connectivity during connectedstandby (plugged in)' is set to 'Disabled'
@@ -1930,7 +1930,7 @@ Configuration CIS_WindowsServer2016_v110 {
           Key        = 'HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Power\PowerSettings\f15576e8-98b7-4186-b944-eafa664402d9'
           ValueName  = 'ACSettingIndex'
           ValueType  = 'DWord'
-          ValueData  = '1'
+          ValueData  = '0'
        }
 
        #  18.8.33.6.3 (L1) Ensure 'Require a password when a computer wakes (on battery)' is set to 'Enabled'
