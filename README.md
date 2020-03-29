@@ -12,7 +12,7 @@ Read more about it on our [NVISO Blog](https://blog.nviso.eu/2020/03/03/windows-
 
 ## CIS Microsoft Windows 10 Enterprise Release 1909 Benchmark v1.8.1
 
-The CIS_Windows10_v181.ps1 file contains the Powershell DSC configuration applying the CIS Microsoft Windows 10 benchmark with the recommended controls.
+The file CIS_Windows10_v181.ps1 contains the Powershell DSC configuration applying the CIS Microsoft Windows 10 benchmark with the recommended controls.
 
 The CIS benchmark is available on the following website:
 
@@ -26,7 +26,7 @@ Please note the following exceptions:
 
 ## CIS Microsoft Windows Server 2019 Release 1809 benchmark v1.1.0
 
-The CIS_WindowsServer2019_v110.ps1 file contains the Powershell DSC configuration applying the CIS Microsoft Windows Server 2019 benchmark with the recommended controls.
+The file CIS_WindowsServer2019_v110.ps1 contains the Powershell DSC configuration applying the CIS Microsoft Windows Server 2019 benchmark with the recommended controls.
 
 The CIS benchmark is available on the following website:
 
@@ -41,7 +41,7 @@ Please note the following exceptions:
 
 ## CIS Microsoft Windows Server 2016 Release 1607 benchmark v1.1.0
 
-The CIS_WindowsServer2016_v110.ps1 file contains the Powershell DSC configuration applying the CIS Microsoft Windows Server 2016 benchmark with the recommended controls.
+The file CIS_WindowsServer2016_v110.ps1 contains the Powershell DSC configuration applying the CIS Microsoft Windows Server 2016 benchmark with the recommended controls.
 
 The CIS benchmark is available on the following website:
 
@@ -56,7 +56,7 @@ Please note the following exceptions:
 
 ## Azure Security Center Baseline for Windows Server 2016
 
-The AzSC_CCEv4_WindowsServer2016.ps1 file contains all controls in the Azure Security Center Baseline for Windows Server 2016.
+The file AzSC_CCEv4_WindowsServer2016.ps1 contains all controls in the Azure Security Center Baseline for Windows Server 2016.
 
 Azure Security Center Baseline for Windows Server 2016 can be found here:
 
@@ -64,7 +64,7 @@ Azure Security Center Baseline for Windows Server 2016 can be found here:
 
 ## Windows Event Log and Audit Policy Best Practices
 
-The AuditPolicy_WindowsServer2016.ps1 file contains the Powershell DSC code for applying Windows event logging and audit settings best practices.
+The file AuditPolicy_WindowsServer2016.ps1 contains the Powershell DSC code for applying Windows event logging and audit settings best practices.
 
 These best practices are based on guidelines from Malware Archeology:
 
@@ -112,6 +112,7 @@ Start-DscConfiguration -Path .\CIS_WindowsServer2016_v110  -Force -Verbose -Wait
 
 The code in this repository has been tested on the following operating systems:
 
+* Windows 10
 * Windows Server 2016
 * Windows Server 2019
 
