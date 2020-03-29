@@ -1,6 +1,6 @@
 # posh-dsc-windowsserver-hardening
 
-This repository contains PowerShell DSC code for the secure configuration of Windows Server according to the following hardening guidelines:
+This repository contains PowerShell DSC code for the secure configuration of Windows according to the following hardening guidelines:
 
 - CIS Microsoft Windows 10 Enterprise Release 1909 Benchmark v1.8.1
 - CIS Microsoft Windows Server 2019 Release 1809 benchmark v1.1.0
