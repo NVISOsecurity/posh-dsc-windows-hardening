@@ -152,7 +152,7 @@ Configuration CIS_Windows10_v181 {
             Identity     = 'Guests, Local account'
         }
 
-        # 2.2.21 (L1) Ensure 'Enable computer and user accounts to be trusted for delegation' is set to 'No One' (MS only)
+        # 2.2.21 (L1) Ensure 'Enable computer and user accounts to be trusted for delegation' is set to 'No One'
         UserRightsAssignment Enablecomputeranduseraccountstobetrustedfordelegation {
             Policy       = 'Enable_computer_and_user_accounts_to_be_trusted_for_delegation'
             Identity     = ''
@@ -206,7 +206,7 @@ Configuration CIS_Windows10_v181 {
             Identity     = 'NT VIRTUAL MACHINE\Virtual Machines'
         }
 
-        # 2.2.30 (L1) Ensure 'Manage auditing and security log' is set to 'Administrators' (MS only)
+        # 2.2.30 (L1) Ensure 'Manage auditing and security log' is set to 'Administrators'
         UserRightsAssignment Manageauditingandsecuritylog {
             Policy       = 'Manage_auditing_and_security_log'
             Identity     = 'Administrators'
@@ -312,7 +312,7 @@ Configuration CIS_Windows10_v181 {
             Interactive_logon_Message_text_for_users_attempting_to_log_on = 'This computer system is the property of Acme Corporation and is for authorised use by employees and designated contractors only. By continuing to use this system you indicate your awareness of and consent to these terms and conditions of use.It is the users responsibility to LOG OFF IMMEDIATELY if you do not agree to the conditions stated in this notice.'
             # 2.3.7.6 (L1) Configure 'Interactive logon: Message title for users attempting to log on'
             Interactive_logon_Message_title_for_users_attempting_to_log_on = 'Logon Warning'
-            # 2.3.7.7 (L2) Ensure 'Interactive logon: Number of previous logons to cache (in case domain controller is not available)' is set to '4 or fewer logon(s)' (MS only) 
+            # 2.3.7.7 (L2) Ensure 'Interactive logon: Number of previous logons to cache (in case domain controller is not available)' is set to '4 or fewer logon(s)'
             Interactive_logon_Number_of_previous_logons_to_cache_in_case_domain_controller_is_not_available = '4'
             # 2.3.7.8 (L1) Ensure 'Interactive logon: Prompt user to change password before expiration' is set to 'between 5 and 14 days'
             Interactive_logon_Prompt_user_to_change_password_before_expiration = '14'
@@ -332,14 +332,14 @@ Configuration CIS_Windows10_v181 {
             Microsoft_network_server_Digitally_sign_communications_if_client_agrees = 'Enabled'
             # 2.3.9.4 (L1) Ensure 'Microsoft network server: Disconnect clients when logon hours expire' is set to 'Enabled'
             Microsoft_network_server_Disconnect_clients_when_logon_hours_expire = 'Enabled' 
-            # 2.3.9.5 (L1) Ensure 'Microsoft network server: Server SPN target name validation level' is set to 'Accept if provided by client' or higher (MS only) 
+            # 2.3.9.5 (L1) Ensure 'Microsoft network server: Server SPN target name validation level' is set to 'Accept if provided by client' or higher
             Microsoft_network_server_Server_SPN_target_name_validation_level = 'Accept if provided by client'
             #Microsoft_network_server_Server_SPN_target_name_validation_level = 'Required from client'
             # 2.3.10.1 (L1) Ensure 'Network access: Allow anonymous SID/Name translation' is set to 'Disabled'
             Network_access_Allow_anonymous_SID_Name_translation = 'Disabled' 
-            # 2.3.10.2 (L1) Ensure 'Network access: Do not allow anonymous enumeration of SAM accounts' is set to 'Enabled' (MS only) 
+            # 2.3.10.2 (L1) Ensure 'Network access: Do not allow anonymous enumeration of SAM accounts' is set to 'Enabled'
             Network_access_Do_not_allow_anonymous_enumeration_of_SAM_accounts = 'Enabled'
-            # 2.3.10.3 (L1) Ensure 'Network access: Do not allow anonymous enumeration of SAM accounts and shares' is set to 'Enabled' (MS only) 
+            # 2.3.10.3 (L1) Ensure 'Network access: Do not allow anonymous enumeration of SAM accounts and shares' is set to 'Enabled'
             Network_access_Do_not_allow_anonymous_enumeration_of_SAM_accounts_and_shares = 'Enabled'
             # 2.3.10.4 (L2) Ensure 'Network access: Do not allow storage of passwords and credentials for network authentication' is set to 'Enabled'
             Network_access_Do_not_allow_storage_of_passwords_and_credentials_for_network_authentication = 'Enabled' 
@@ -1434,7 +1434,7 @@ Configuration CIS_Windows10_v181 {
             ValueData    = '0'
         }
 
-        # 18.2.2 (L1) Ensure 'Do not allow password expiration time longer than required by policy' is set to 'Enabled' (MS only)
+        # 18.2.2 (L1) Ensure 'Do not allow password expiration time longer than required by policy' is set to 'Enabled'
         Registry 'PwdExpirationProtectionEnabled' {
             Ensure       = 'Present'
             Key          = 'HKEY_LOCAL_MACHINE\SOFTWARE\Policies\MicrosoftServices\AdmPwd'
@@ -1443,7 +1443,7 @@ Configuration CIS_Windows10_v181 {
             ValueData    = '1'
         }
 
-        # 18.2.3 (L1) Ensure 'Enable Local Admin Password Management' is set to 'Enabled' (MS only)
+        # 18.2.3 (L1) Ensure 'Enable Local Admin Password Management' is set to 'Enabled'
         Registry 'AdmPwdEnabled' {
             Ensure       = 'Present'
             Key          = 'HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft Services\AdmPwd'
@@ -1452,7 +1452,7 @@ Configuration CIS_Windows10_v181 {
             ValueData    = '1'
         }
         
-        # 18.2.4 (L1) Ensure 'Password Settings: Password Complexity' is set to 'Enabled: Large letters + small letters + numbers + special characters' (MS only)
+        # 18.2.4 (L1) Ensure 'Password Settings: Password Complexity' is set to 'Enabled: Large letters + small letters + numbers + special characters'
         Registry 'PasswordComplexity' {
             Ensure       = 'Present'
             Key          = 'HKEY_LOCAL_MACHINE\SOFTWARE\Policies\MicrosoftServices\AdmPwd'
@@ -1649,7 +1649,7 @@ Configuration CIS_Windows10_v181 {
             ValueData    = '90'
         }
 
-        # 18.5.4.1 (L1) Ensure 'Turn off multicast name resolution' is set to 'Enabled' (MS Only)
+        # 18.5.4.1 (L1) Ensure 'Turn off multicast name resolution' is set to 'Enabled'
         Registry 'EnableMulticast' {
             Ensure       = 'Present'
             Key          = 'HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\WindowsNT\DNSClient'
@@ -1919,7 +1919,7 @@ Configuration CIS_Windows10_v181 {
             ValueData  = '1'
         }
 
-        # 18.8.5.1 (NG) Ensure 'Turn On Virtualization Based Security' is set to 'Enabled' (MS Only)
+        # 18.8.5.1 (NG) Ensure 'Turn On Virtualization Based Security' is set to 'Enabled'
         Registry 'EnableVirtualizationBasedSecurity' {
             Ensure     = 'Present'
             Key        = 'HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\DeviceGuard'
@@ -2297,7 +2297,7 @@ Configuration CIS_Windows10_v181 {
             ValueData  = '1'
         }
 
-        # 18.8.28.4 (L1) Ensure 'Enumerate local users on domain-joined computers' is set to 'Disabled' (MS only)
+        # 18.8.28.4 (L1) Ensure 'Enumerate local users on domain-joined computers' is set to 'Disabled'
         Registry 'EnumerateLocalUsers' {
             Ensure     = 'Present'
             Key        = 'HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\System'
@@ -2486,7 +2486,7 @@ Configuration CIS_Windows10_v181 {
             ValueData  = '1'
         }
 
-        #  18.8.52.1.2 (L2) Ensure 'Enable Windows NTP Server' is set to 'Disabled' (MS only)
+        #  18.8.52.1.2 (L2) Ensure 'Enable Windows NTP Server' is set to 'Disabled'
         Registry 'EnableNTPServer' {
             Ensure     = 'Present'
             Key        = 'HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\W32Time\TimeProviders\NtpServer'
