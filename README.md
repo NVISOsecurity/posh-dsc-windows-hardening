@@ -20,9 +20,9 @@ The CIS benchmark is available on the following website:
 
 Please note the following exceptions:
 
-* For the recommended control  5.39 (L2) Ensure 'Windows Remote Management (WS-Management) (WinRM)' is set to 'Disabled', modify to 2 for testing.
+* For control  5.39 (L2) Ensure 'Windows Remote Management (WS-Management) (WinRM)' is set to 'Disabled', modify to 2 for testing.
 
-* For the recommended control  18.9.97.2.2 (L2) Ensure 'Allow remote server management through WinRM' is set to 'Disabled', modify to 1 for testing.
+* For control  18.9.97.2.2 (L2) Ensure 'Allow remote server management through WinRM' is set to 'Disabled', modify to 1 for testing.
 
 ## CIS Microsoft Windows Server 2019 Release 1809 benchmark v1.1.0
 
@@ -33,11 +33,11 @@ The CIS benchmark is available on the following website:
 [CIS Benchmarks - Center for Internet Security](https://www.cisecurity.org/cis-benchmarks/)
 
 Please note the following exceptions:
-* For some recommended controls in chapter 2.2 (Local Policies: User Rights Assignment), it is not possible to configure some controls due to duplicates.
+* For some controls in chapter 2.2 (Local Policies: User Rights Assignment), some controls are in comment due to duplicates.
 
-* For the recommended control  18.9.97.2.2 (L2) Ensure 'Allow remote server management through WinRM' is set to 'Disabled', modify to 1 for testing.
+* For control  18.9.97.2.2 (L2) Ensure 'Allow remote server management through WinRM' is set to 'Disabled', modify to 1 for testing.
 
-* For the recommended control 19.7.41.1 (L1) Ensure 'Always install with elevated privileges' is set to 'Disabled', it is commented out because this is a duplicate of the recommendation control 18.9.85.2 (L1) Ensure 'Always install with elevated privileges' is set to 'Disabled'.
+* For control 19.7.41.1 (L1) Ensure 'Always install with elevated privileges' is set to 'Disabled', it is in comment because this is a duplicate of the control 18.9.85.2 (L1) Ensure 'Always install with elevated privileges' is set to 'Disabled'.
 
 ## CIS Microsoft Windows Server 2016 Release 1607 benchmark v1.1.0
 
@@ -48,11 +48,11 @@ The CIS benchmark is available on the following website:
 [CIS Benchmarks - Center for Internet Security](https://www.cisecurity.org/cis-benchmarks/)
 
 Please note the following exceptions:
-* For some recommended controls in chapter 2.2 (Local Policies: User Rights Assignment), it is not possible to configure some controls due to duplicates.
+* For some controls in chapter 2.2 (Local Policies: User Rights Assignment), some controls are in comment due to duplicates.
 
-* For the recommended control  18.9.97.2.2 (L2) Ensure 'Allow remote server management through WinRM' is set to 'Disabled', modify to 1 for testing.
+* For control  18.9.97.2.2 (L2) Ensure 'Allow remote server management through WinRM' is set to 'Disabled', modify to 1 for testing.
 
-* For the recommended control 19.7.40.1 (L1) Ensure 'Always install with elevated privileges' is set to 'Disabled', it is commented out because this is a duplicate of the recommendation control 18.9.85.2 (L1) Ensure 'Always install with elevated privileges' is set to 'Disabled'.
+* For control 19.7.40.1 (L1) Ensure 'Always install with elevated privileges' is set to 'Disabled', it is in comment because this is a duplicate of the recommendation control 18.9.85.2 (L1) Ensure 'Always install with elevated privileges' is set to 'Disabled'.
 
 ## Azure Security Center Baseline for Windows Server 2016
 
@@ -112,9 +112,9 @@ Start-DscConfiguration -Path .\CIS_WindowsServer2016_v110  -Force -Verbose -Wait
 
 The code in this repository has been tested on the following operating systems:
 
-* Windows 10
-* Windows Server 2016
-* Windows Server 2019
+* Windows 10 Release 1909
+* Windows Server 2016 1607
+* Windows Server 2019 Release 1809
 
 ## Disclaimer
 

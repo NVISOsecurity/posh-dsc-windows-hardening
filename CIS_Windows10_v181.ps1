@@ -1523,6 +1523,7 @@ Configuration CIS_Windows10_v181 {
             ValueType    = 'DWord'
             ValueData    = '2'
         }
+        
         # 18.3.6 (L1) Ensure 'WDigest Authentication' is set to 'Disabled'
         Registry 'UseLogonCredential' {
             Ensure       = 'Present'
