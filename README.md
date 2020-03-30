@@ -110,10 +110,10 @@ Start-DscConfiguration -Path .\CIS_WindowsServer2016_v110  -Force -Verbose -Wait
 
 ### OS Platforms
 
-The code in this repository has been tested on the following operating systems:
+The relevant baselines have been tested on the following operating systems:
 
 * Windows 10 Release 1909
-* Windows Server 2016 1607
+* Windows Server 2016 Release 1607
 * Windows Server 2019 Release 1809
 
 ## Disclaimer
