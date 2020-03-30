@@ -56,10 +56,10 @@ Configuration CIS_Windows10_v181 {
             Identity     = 'Administrators, LOCAL SERVICE, NETWORK SERVICE'
         }
 
-        # 2.2.5 (L1) Ensure 'Allow log on locally' is set to 'Administrators'
+        # 2.2.5 (L1) Ensure 'Allow log on locally' is set to 'Administrators, Users'
         UserRightsAssignment Allowlogonlocally {
             Policy       = 'Allow_log_on_locally'
-            Identity     = 'Administrators'
+            Identity     = 'Administrators, Users'
         }
 
         # 2.2.6 (L1) Ensure 'Allow log on through Remote Desktop Services' is set to 'Administrators, Remote Desktop Users'
