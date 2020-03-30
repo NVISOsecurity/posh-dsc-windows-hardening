@@ -1398,14 +1398,14 @@ Configuration CIS_Windows10_v181 {
             AuditFlag = 'Success'
         }
 
-       # 18.1.1.1 (L1) Ensure 'Prevent enabling lock screen camera' is set to 'Enabled'
-       Registry 'NoLockScreenCamera' {
-        Ensure      = 'Present'
-        Key         = 'HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\Personalization'
-        ValueName   = 'NoLockScreenCamera' 
-        ValueType   = 'DWord' 
-        ValueData   = '1' 
-    }
+        # 18.1.1.1 (L1) Ensure 'Prevent enabling lock screen camera' is set to 'Enabled'
+        Registry 'NoLockScreenCamera' {
+            Ensure      = 'Present'
+            Key         = 'HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\Personalization'
+            ValueName   = 'NoLockScreenCamera' 
+            ValueType   = 'DWord' 
+            ValueData   = '1' 
+        }
 
         # 18.1.1.2 (L1) Ensure 'Prevent enabling lock screen slide show' is set to 'Enabled'
         Registry 'NoLockScreenSlideshow' {
