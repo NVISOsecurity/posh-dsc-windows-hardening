@@ -3351,10 +3351,10 @@ Configuration CIS_Windows10_v181 {
         }
 
         # 18.9.77.10.2  (L1) Ensure 'Turn on e-mail scanning' is set to 'Enabled'
-        Registry 'DisableEmailScanning' {
+        Registry 'EnableEmailScanning' {
             Ensure     = 'Present'
             Key        = 'HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\WindowsDefender\Scan'
-            ValueName  = 'DisableEmailScanning'
+            ValueName  = 'EnableEmailScanning'
             ValueType  = 'DWord'
             ValueData  = '1'
         }
@@ -3711,17 +3711,6 @@ Configuration CIS_Windows10_v181 {
             ValueData  = '0'
         }
 
-
-
-        # 19.1.3.2 (L1) Ensure 'Force specific screen saver: Screen saver executable name' is set to 'Enabled: scrnsave.scr'
-        Registry 'SCRNSAVE.EXE' {
-            Ensure       = 'Present'
-            Key          = 'HKEY_CURRENT_USER\SOFTWARE\Policies\Microsoft\Windows\Control Panel\Desktop'
-            ValueName    = 'SCRNSAVE.EXE'
-            ValueType    = 'String'
-            ValueData    = 'scrnsave.scr'
-        }
-
         # 18.9.98.1 (L2) Ensure 'Allow Remote Shell Access' is set to 'Disabled'
         Registry 'AllowRemoteShellAccess' {
             Ensure     = 'Present'
@@ -3829,7 +3818,7 @@ Configuration CIS_Windows10_v181 {
             ValueType  = 'DWord'
             ValueData  = '0'
         }
-
+ 
         # 18.9.102.5 (L1) Ensure 'Remove access to “Pause updates” feature' is set to 'Enabled'
         Registry 'SetDisablePauseUXAccess' {
             Ensure     = 'Present'
@@ -3837,6 +3826,24 @@ Configuration CIS_Windows10_v181 {
             ValueName  = 'SetDisablePauseUXAccess'
             ValueType  = 'DWord'
             ValueData  = '1'
+        }
+
+        # 19.1.3.1 (L1) Ensure 'Enable screen saver' is set to 'Enabled'
+        Registry 'ScreenSaveActive' {
+            Ensure      = 'Present'
+            Key         = 'HKEY_CURRENT_USER\SOFTWARE\Policies\Microsoft\Windows\Control Panel\Desktop'
+            ValueName   = 'ScreenSaveActive'
+            ValueType   = 'String'
+            ValueData   = '1'
+        }
+
+        # 19.1.3.2 (L1) Ensure 'Force specific screen saver: Screen saver executable name' is set to 'Enabled: scrnsave.scr'
+        Registry 'SCRNSAVE.EXE' {
+            Ensure       = 'Present'
+            Key          = 'HKEY_CURRENT_USER\SOFTWARE\Policies\Microsoft\Windows\Control Panel\Desktop'
+            ValueName    = 'SCRNSAVE.EXE'
+            ValueType    = 'String'
+            ValueData    = 'scrnsave.scr'
         }
 
         # 19.1.3.3 (L1) Ensure 'Password protect the screen saver' is set to 'Enabled'

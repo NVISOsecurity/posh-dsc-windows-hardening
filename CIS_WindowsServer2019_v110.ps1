@@ -2613,10 +2613,10 @@ Configuration CIS_WindowsServer2019_v110 {
        }
 
        #  18.9.77.10.2  (L1) Ensure 'Turn on e-mail scanning' is set to 'Enabled'
-       Registry 'DisableEmailScanning' {
+       Registry 'EnableEmailScanning' {
           Ensure     = 'Present'
           Key        = 'HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\WindowsDefender\Scan'
-          ValueName  = 'DisableEmailScanning'
+          ValueName  = 'EnableEmailScanning'
           ValueType  = 'DWord'
           ValueData  = '1'
        }
