@@ -33,7 +33,7 @@ The CIS benchmark is available on the following website:
 [CIS Benchmarks - Center for Internet Security](https://www.cisecurity.org/cis-benchmarks/)
 
 Please note the following exceptions:
-* For some controls in chapter 2.2 (Local Policies: User Rights Assignment), some controls are in comment due to duplicates.
+* Some controls in chapter 2.2 (Local Policies: User Rights Assignment) are in comment due to duplicates.
 
 * For control  18.9.97.2.2 (L2) Ensure 'Allow remote server management through WinRM' is set to 'Disabled', modify to 1 for testing.
 
@@ -48,7 +48,7 @@ The CIS benchmark is available on the following website:
 [CIS Benchmarks - Center for Internet Security](https://www.cisecurity.org/cis-benchmarks/)
 
 Please note the following exceptions:
-* For some controls in chapter 2.2 (Local Policies: User Rights Assignment), some controls are in comment due to duplicates.
+* Some controls in chapter 2.2 (Local Policies: User Rights Assignment) are in comment due to duplicates.
 
 * For control  18.9.97.2.2 (L2) Ensure 'Allow remote server management through WinRM' is set to 'Disabled', modify to 1 for testing.
 
