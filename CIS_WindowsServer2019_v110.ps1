@@ -1634,7 +1634,7 @@ Configuration CIS_WindowsServer2019_v110 {
        # 18.7.1.1 (L2) Ensure 'Turn off notifications network usage' is set to 'Enabled'
        Registry 'notificationsnetworkusage' {
          Ensure     = 'Present'
-         Key        = 'KEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\CurrentVersion\PushNotifications'
+         Key        = 'HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\CurrentVersion\PushNotifications'
          ValueName  = 'NoCloudApplicationNotification'
          ValueType  = 'DWord'
          ValueData  = '1'
