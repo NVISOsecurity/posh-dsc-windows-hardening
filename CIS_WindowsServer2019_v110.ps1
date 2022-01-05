@@ -2546,7 +2546,7 @@ Configuration CIS_WindowsServer2019_v110 {
           Key        = 'HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\WindowsSearch'
           ValueName  = 'AllowCloudSearch'
           ValueType  = 'DWord'
-          ValueData  = '1'
+          ValueData  = '0'
        }
 
        #  18.9.61.3 (L1) Ensure 'Allow indexing of encrypted files' is set to 'Disabled'
