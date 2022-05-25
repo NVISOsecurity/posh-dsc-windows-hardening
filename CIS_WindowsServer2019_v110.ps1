@@ -2001,7 +2001,7 @@ Configuration CIS_WindowsServer2019_v110 {
       }
        
        # 18.8.31.2 (L2) Ensure 'Allow upload of User Activities' is set to 'Disabled'
-       Registry 'AllowCrossDeviceClipboard' {
+       Registry 'UploadUserActivities' {
          Ensure     = 'Present'
          Key        = 'HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\System'
          ValueName  = 'UploadUserActivities'
