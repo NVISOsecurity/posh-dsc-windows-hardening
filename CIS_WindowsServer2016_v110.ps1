@@ -359,8 +359,8 @@ Configuration CIS_WindowsServer2016_v110 {
          Devices_Prevent_users_from_installing_printer_drivers = 'Enabled'
          # 2.3.5.1 (L1) Ensure 'Domain controller: Allow server operators to schedule tasks' is set to 'Disabled' (DC only)
          Domain_controller_Allow_server_operators_to_schedule_tasks = 'Disabled'
-         # 2.3.5.2 (L1) Ensure 'Domain controller: LDAP server signing requirements' is set to 'Require signing' (DC only) 
-         Domain_controller_LDAP_server_signing_requirements = 'Require signing'
+         # 2.3.5.2 (L1) Ensure 'Domain controller: LDAP server signing requirements' is set to 'Require Signature' (DC only) 
+         Domain_controller_LDAP_server_signing_requirements = 'Require Signature'
          # 2.3.5.3 (L1) Ensure 'Domain controller: Refuse machine account password changes' is set to 'Disabled' (DC only) 
          Domain_controller_Refuse_machine_account_password_changes = 'Disabled'
          # 2.3.6.1 (L1) Ensure 'Domain member: Digitally encrypt or sign secure channel data (always)' is set to 'Enabled'
