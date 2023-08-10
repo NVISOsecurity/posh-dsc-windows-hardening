@@ -2708,7 +2708,7 @@ Configuration CIS_WindowsServer2019_v110 {
          Key        = 'HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\WindowsDefender'
          ValueName  = 'PUAProtection'
          ValueType  = 'DWord'
-         ValueData  = '2'
+         ValueData  = '1'
       }
 
        #  18.9.77.15 (L1) Ensure 'Turn off Windows Defender AntiVirus' is set to 'Disabled'
