@@ -2641,67 +2641,30 @@ Configuration CIS_WindowsServer2019_v110 {
        }
 
        #  18.9.77.13.1.2 (L1) Ensure 'Configure Attack Surface Reduction rules: Set the state for each ASR rule' is 'configured'
-       Registry '75668c1f-73b5-4cf0-bb93-3ecf5cb7cc84' {
-          Ensure     = 'Present'
-          Key        = 'HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows Defender\Windows Defender Exploit Guard\ASR\Rules'
-          ValueName  = '75668c1f-73b5-4cf0-bb93-3ecf5cb7cc84'
-          ValueType  = 'String'
-          ValueData  = '1'
-       }
-
-       #  18.9.77.13.1.2 (L1) Ensure 'Configure Attack Surface Reduction rules: Set the state for each ASR rule' is 'configured'
-       Registry '3b576869-a4ec-4529-8536-b80a7769e899' {
-          Ensure     = 'Present'
-          Key        = 'HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows Defender\Windows Defender Exploit Guard\ASR\Rules'
-          ValueName  = '3b576869-a4ec-4529-8536-b80a7769e899'
-          ValueType  = 'String'
-          ValueData  = '1'
-       }
-
-       #  18.9.77.13.1.2 (L1) Ensure 'Configure Attack Surface Reduction rules: Set the state for each ASR rule' is 'configured'
-       Registry 'd4f940ab-401b-4efc-aadc-ad5f3c50688a' {
-          Ensure     = 'Present'
-          Key        = 'HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows Defender\Windows Defender Exploit Guard\ASR\Rules'
-          ValueName  = 'd4f940ab-401b-4efc-aadc-ad5f3c50688a'
-          ValueType  = 'String'
-          ValueData  = '1'
-       }
-
-       #  18.9.77.13.1.2 (L1) Ensure 'Configure Attack Surface Reduction rules: Set the state for each ASR rule' is 'configured'
-       Registry '92e97fa1-2edf-4476-bdd6-9dd0b4dddc7b' {
-          Ensure     = 'Present'
-          Key        = 'HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows Defender\Windows Defender Exploit Guard\ASR\Rules'
-          ValueName  = '92e97fa1-2edf-4476-bdd6-9dd0b4dddc7b'
-          ValueType  = 'String'
-          ValueData  = '1'
-       }
-
-       #  18.9.77.13.1.2 (L1) Ensure 'Configure Attack Surface Reduction rules: Set the state for each ASR rule' is 'configured'
-       Registry '5beb7efe-fd9a-4556-801d-275e5ffc04cc' {
-          Ensure     = 'Present'
-          Key        = 'HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows Defender\Windows Defender Exploit Guard\ASR\Rules'
-          ValueName  = '5beb7efe-fd9a-4556-801d-275e5ffc04cc'
-          ValueType  = 'String'
-          ValueData  = '1'
-       }
-
-       #  18.9.77.13.1.2 (L1) Ensure 'Configure Attack Surface Reduction rules: Set the state for each ASR rule' is 'configured'
-       Registry 'd3e037e1-3eb8-44c8-a917-57927947596d' {
-          Ensure     = 'Present'
-          Key        = 'HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows Defender\Windows Defender Exploit Guard\ASR\Rules'
-          ValueName  = 'd3e037e1-3eb8-44c8-a917-57927947596d'
-          ValueType  = 'String'
-          ValueData  = '1'
-       }
-
-       #  18.9.77.13.1.2 (L1) Ensure 'Configure Attack Surface Reduction rules: Set the state for each ASR rule' is 'configured'
-       Registry 'be9ba2d9-53ea-4cdc-84e5-9b1eeee46550' {
-          Ensure     = 'Present'
-          Key        = 'HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows Defender\Windows Defender Exploit Guard\ASR\Rules'
-          ValueName  = 'be9ba2d9-53ea-4cdc-84e5-9b1eeee46550'
-          ValueType  = 'String'
-          ValueData  = '1'
-       }
+       $ASRCollection = @(
+       '26190899-1602-49e8-8b27-eb1d0a1ce869'
+       '3b576869-a4ec-4529-8536-b80a7769e899'
+       '5beb7efe-fd9a-4556-801d-275e5ffc04cc'
+       '75668c1f-73b5-4cf0-bb93-3ecf5cb7cc84'
+       '7674ba52-37eb-4a4f-a9a1-f0f9a1619a2c'
+       '92e97fa1-2edf-4476-bdd6-9dd0b4dddc7b'
+       '9e6c4e1f-7d60-472f-ba1a-a39ef669e4b2'
+       'b2b3f03d-6a65-4f7b-a9c7-1c7ef74a9ba4'
+       'be9ba2d9-53ea-4cdc-84e5-9b1eeee46550'
+       'd3e037e1-3eb8-44c8-a917-57927947596d'
+       'd4f940ab-401b-4efc-aadc-ad5f3c50688a'
+       )
+       foreach($ASR in $ASRCollection)
+         {
+           Registry $ASR
+           {
+              Ensure     = 'Present'
+              Key        = 'HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows Defender\Windows Defender Exploit Guard\ASR\Rules'
+              ValueName  = $ASR
+              ValueType  = 'String'
+              ValueData  = '1'
+           }         
+         }
 
        #  18.9.77.13.3.1 (L1) Ensure 'Prevent users and apps from accessing dangerous websites' is set to 'Enabled: Block'
        Registry 'EnableNetworkProtection' {
