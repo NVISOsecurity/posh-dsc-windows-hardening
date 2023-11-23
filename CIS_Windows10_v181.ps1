@@ -1908,7 +1908,7 @@ Configuration CIS_Windows10_v181 {
             Key        = 'HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System\CredSSP\Parameters'
             ValueName  = 'AllowEncryptionOracle'
             ValueType  = 'DWord'
-            ValueData  = '2'
+            ValueData  = '0'
         }
 
         # 18.8.4.2 (L1) Ensure 'Remote host allows delegation of non-exportable credentials' is set to 'Enabled'
